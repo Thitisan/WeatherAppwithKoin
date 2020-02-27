@@ -15,3 +15,4 @@ This set of examples builds up to many parts, check them out too:
 
 Clone and add your OpenweatherMaps API key to gradle.properties.
 "# MyWorkshopWeatherApp" 
+"# MyWorkshopWeatherApp" 
