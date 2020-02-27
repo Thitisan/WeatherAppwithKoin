@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/weatherFragment2">
+    <fragment
+        android:id="@+id/weatherFragment2"
+        android:name="com.github.harmittaa.koinexample.fragment.WeatherFragment"
+        android:label="WeatherFragment" >
+        <action
+            android:id="@+id/action_weatherFragment2_to_showFragment"
+            app:destination="@id/showFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showFragment"
+        android:name="com.github.harmittaa.koinexample.fragment.ShowFragment"
+        android:label="fragment_show"
+        tools:layout="@layout/fragment_show"
+        ><argument
+        android:name="LocationName"
+        app:argType="string"
+        app:nullable="true"
+        android:defaultValue="Unkown" />
+        <argument
+            android:name="CountryName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Unkown" />
+        <argument
+            android:name="TemperatureValue"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="Humidity"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="Pressure"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="Uvindex"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="Windspeed"
+            app:argType="integer"
+            android:defaultValue="0" /></fragment>
+</navigation>

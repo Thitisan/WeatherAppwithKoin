@@ -16,10 +16,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    override fun onResume() {
-        super.onResume()
-        if (preferences.getShouldShowFragment()) {
-            supportFragmentManager.beginTransaction().replace(R.id.root, exampleFragment, "weather").commit()
-        }
-    }
+
 }

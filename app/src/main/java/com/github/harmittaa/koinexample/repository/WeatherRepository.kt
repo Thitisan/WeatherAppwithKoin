@@ -17,7 +17,7 @@ open class WeatherRepository(
 
     suspend fun getWeather(location: String): Resource<Weather> {
         return try {
-            val response = weatherApi.getForecast(location, "metric")
+            val response = weatherApi.getForecast(location)
             return responseHandler.handleSuccess(response)
         } catch (e: Exception) {
             responseHandler.handleException(e)

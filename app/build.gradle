@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
     compileSdkVersion 29
@@ -30,12 +31,10 @@ android {
         debug {
             try {
                 minifyEnabled false
-                buildConfigField "String", "API_URL", "\"https://api.openweathermap.org/data/2.5/\""
-                buildConfigField "String", "API_KEY", openweathermap_key
+                buildConfigField "String", "API_URL", "\"http://api.weatherstack.com/\""
+                buildConfigField "String", "API_KEY", "\"a1a05bdf232ec8de5cea0771b54b50c1\""
                 debuggable true
             } catch (e) {
-                // add gradle.properties file with the following property:
-                // openweathermap_key = "YOUR_API_KEY"
                 throw e
             }
         }
@@ -49,8 +48,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //noinspection GradleCompatible
+    implementation 'com.android.support:support-v4:28.0.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    implementation "androidx.navigation:navigation-fragment-ktx:2.2.1"
+    implementation "androidx.navigation:navigation-ui-ktx:2.2.1"
 
     def lifecycle_version = "2.2.0-rc01"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -73,11 +79,11 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
     implementation "org.koin:koin-core:$koin_version"
 
-    def retrofit_version = "2.6.2"
+    def retrofit_version = "2.7.2"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
 
-    def okhttp_version = "4.2.2"
+    def okhttp_version = "4.4.0"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
     def mockito_version = "3.1.0"

@@ -3,11 +3,21 @@ package com.github.harmittaa.koinexample.model
 import com.google.gson.annotations.SerializedName
 
 data class Weather(
-    @SerializedName("main") val temp: TempData,
-    val name: String
+        @SerializedName("location")val location:LocationData,
+        @SerializedName("current")val current:CurrentData
+
 )
 
-data class TempData(
-    val temp: Double,
-    val humidity: Int
+data class LocationData(
+        val name:String,
+        val country:String
+)
+
+data class CurrentData(
+        val temperature:Int,
+        val wind_speed:Int,
+        val pressure:Int,
+        val humidity:Int,
+        val uv_index:Int,
+        val weatherIcons: List<String>
 )
