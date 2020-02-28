@@ -35,12 +35,12 @@ class MapFragment : Fragment(), OnMapReadyCallback{
         retrieveMap()
         if (googleMap != null) {
             mMap = googleMap
-        val a = lon.toDouble()
-        val b = lat.toDouble()
+        val lon = lon.toDouble()
+        val lat = lat.toDouble()
             val locationName = Name.toString()
         // Add a marker in Sydney and move the camera
-        val location = LatLng(b, a)
-        mMap.addMarker(MarkerOptions().position(location).title("Marker in $locationName"))
+        val location = LatLng(lat, lon)
+        mMap.addMarker(MarkerOptions().position(location).title("$locationName"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(location))
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 12.0f))
         }

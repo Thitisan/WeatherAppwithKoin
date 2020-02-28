@@ -17,7 +17,6 @@ import com.github.harmittaa.koinexample.model.Weather
 import com.github.harmittaa.koinexample.networking.Resource
 import com.github.harmittaa.koinexample.networking.Status
 import kotlinx.android.synthetic.main.fragment_view.*
-import org.json.JSONArray
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.dsl.module
 
@@ -28,7 +27,7 @@ val fragmentModule = module {
 class WeatherFragment : Fragment() {
     private val exampleViewModel: WeatherViewModel by viewModel()
     private lateinit var binding: FragmentViewBinding
-    lateinit var json:JSONArray
+    lateinit var WeatherIcon : String
 
 
     private val observer = Observer<Resource<Weather>> {
@@ -49,9 +48,9 @@ class WeatherFragment : Fragment() {
                     Pressure = 0,
                     Humidity = 0,
                     Lat = "0.0",
-                    Lon = "0.0"
+                    Lon = "0.0",
+                    IconUrl = "test"
 
-//                    Weathericons = "Wwww
 
 )
 
@@ -83,14 +82,16 @@ class WeatherFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     private fun updateTemperatureText(location: LocationData, currentData: CurrentData) {
         binding.weatherInfo.text = "Checked !! location at ${location.name} "
+
         locationEt.visibility = View.GONE
         Show_button.visibility = View.VISIBLE
+        WeatherIcon = currentData.weather_icons[0]
         action =
                 WeatherFragmentDirections.actionWeatherFragment2ToShowFragment(
                         LocationName = location.name,
                         CountryName = location.country,
                         TemperatureValue = currentData.temperature,
-//                     Weathericons = currentData.weatherIcons[0],
+                        IconUrl = WeatherIcon,
                         Uvindex = currentData.uv_index,
                         Windspeed = currentData.wind_speed,
                         Pressure = currentData.pressure,

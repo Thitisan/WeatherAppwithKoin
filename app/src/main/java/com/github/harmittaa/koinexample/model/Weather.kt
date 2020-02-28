@@ -21,5 +21,5 @@ data class CurrentData(
         val pressure:Int,
         val humidity:Int,
         val uv_index:Int,
-        val weatherIcons: List<String>
+        val weather_icons: List<String>
 )

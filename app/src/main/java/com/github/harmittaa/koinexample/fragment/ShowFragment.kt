@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.bumptech.glide.Glide
 import com.github.harmittaa.koinexample.R
 import kotlinx.android.synthetic.main.fragment_show.*
 
@@ -52,8 +53,8 @@ class ShowFragment : Fragment() {
             val args = ShowFragmentArgs.fromBundle(arguments)
             lons = args.Lon.toString()
             lats = args.Lat.toString()
-//            val icon = args.Weathericons
-//            Glide.with(this).load(icon).into(Weather_icons)
+            val icon = args.IconUrl
+            Glide.with(this).load(icon).into(Weather_icons)
             Name = args.LocationName.toString()
             Country = args.CountryName.toString()
             Temperature = args.TemperatureValue.toString()+" °C"
