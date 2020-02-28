@@ -46,5 +46,38 @@
         <argument
             android:name="Windspeed"
             app:argType="integer"
-            android:defaultValue="0" /></fragment>
+            android:defaultValue="0" />
+        <argument
+            android:name="Lat"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="Lon"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_showFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.github.harmittaa.koinexample.fragment.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <argument
+            android:name="Lon"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Unkown" />
+        <argument
+            android:name="Lat"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Unkown" />
+        <argument
+            android:name="CountryName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Unkown" />
+    </fragment>
 </navigation>

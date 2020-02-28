@@ -5,13 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
+import androidx.navigation.findNavController
 import com.github.harmittaa.koinexample.R
 import kotlinx.android.synthetic.main.fragment_show.*
-import java.util.*
-import kotlin.concurrent.schedule
 
 /**
  * A simple [Fragment] subclass.
@@ -24,6 +21,8 @@ class ShowFragment : Fragment() {
     lateinit var pressure:String
     lateinit var wind:String
     lateinit var valueuv_index:String
+    lateinit var lons :String
+    lateinit var lats :String
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -35,7 +34,7 @@ class ShowFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         retrieveArguments()
-
+        FindMap()
         textView_Name?.text = Name
         textView_Country?.text = Country
         textView_Temperature?.text = Temperature
@@ -45,11 +44,14 @@ class ShowFragment : Fragment() {
         textView_valueuv_index?.text = valueuv_index
 
 
+
     }
     @SuppressLint("SetTextI18n")
     private fun retrieveArguments() {
         arguments?.let { arguments ->
             val args = ShowFragmentArgs.fromBundle(arguments)
+            lons = args.Lon.toString()
+            lats = args.Lat.toString()
 //            val icon = args.Weathericons
 //            Glide.with(this).load(icon).into(Weather_icons)
             Name = args.LocationName.toString()
@@ -60,8 +62,16 @@ class ShowFragment : Fragment() {
             wind  = args.Uvindex.toString()
             valueuv_index= args.Windspeed.toString()+"km/h NW"
 
-
-
+        }
+    }
+    fun FindMap(){
+        val find = ShowFragmentDirections.actionShowFragmentToMapFragment(
+                Lon = lons,
+                Lat =lats,
+                CountryName = Name
+        )
+        textView_Name.setOnClickListener{ Showmap ->
+            Showmap.findNavController().navigate(find)
         }
     }
 }

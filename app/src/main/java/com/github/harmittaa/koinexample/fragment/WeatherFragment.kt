@@ -47,9 +47,11 @@ class WeatherFragment : Fragment() {
                     Uvindex = 0,
                     Windspeed = 0,
                     Pressure = 0,
-                    Humidity = 0
-//                    Weathericons = "Wwww"
+                    Humidity = 0,
+                    Lat = "0.0",
+                    Lon = "0.0"
 
+//                    Weathericons = "Wwww
 
 )
 
@@ -88,11 +90,14 @@ class WeatherFragment : Fragment() {
                         LocationName = location.name,
                         CountryName = location.country,
                         TemperatureValue = currentData.temperature,
-//                        Weathericons = currentData.weatherIcons[],
+//                     Weathericons = currentData.weatherIcons[0],
                         Uvindex = currentData.uv_index,
                         Windspeed = currentData.wind_speed,
                         Pressure = currentData.pressure,
-                        Humidity = currentData.humidity
+                        Humidity = currentData.humidity,
+                        Lon = location.lon,
+                        Lat = location.lat
+
                 )
         Show_button.setOnClickListener{Showvalue ->
             Showvalue.findNavController().navigate(action)

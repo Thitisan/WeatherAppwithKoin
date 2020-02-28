@@ -10,7 +10,9 @@ data class Weather(
 
 data class LocationData(
         val name:String,
-        val country:String
+        val country:String,
+        val lat:String,
+        val lon:String
 )
 
 data class CurrentData(
