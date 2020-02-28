@@ -82,7 +82,7 @@ class WeatherFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun updateTemperatureText(location: LocationData, currentData: CurrentData) {
-        binding.weatherInfo.text = "Temperature at ${location.name} is ${currentData.temperature} celsius"
+        binding.weatherInfo.text = "Checked !! location at ${location.name} "
         locationEt.visibility = View.GONE
         Show_button.visibility = View.VISIBLE
         action =

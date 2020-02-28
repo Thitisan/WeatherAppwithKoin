@@ -21,30 +21,36 @@
 
         <TextView
             android:id="@+id/textView_Country"
-            android:layout_width="107dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="16dp"
-            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Japan"
+            android:textSize="25sp"
+            android:textColor="#fffff1"
             app:layout_constraintEnd_toEndOf="@+id/textView_Name"
             app:layout_constraintStart_toStartOf="@+id/textView_Name"
             app:layout_constraintTop_toBottomOf="@+id/textView_Name" />
 
         <TextView
             android:id="@+id/textView_Temperature"
-            android:layout_width="133dp"
-            android:layout_height="36dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text=""
+            android:text="20 *"
+            android:textSize="40sp"
+            android:textColor="#fffff1"
             app:layout_constraintEnd_toEndOf="@+id/textView_Country"
             app:layout_constraintStart_toStartOf="@+id/textView_Country"
             app:layout_constraintTop_toBottomOf="@+id/textView_Country" />
 
         <TextView
             android:id="@+id/textView_Name"
-            android:layout_width="116dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="32dp"
-            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="Tokyo"
+            android:textColor="#fffff1"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -65,6 +71,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="20dp"
             android:text="Curent Details"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewBG" />
 
@@ -74,6 +81,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="16dp"
             android:text="humidity"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="@+id/textView_curentdetails"
             app:layout_constraintStart_toStartOf="@+id/textView_curentdetails"
             app:layout_constraintTop_toBottomOf="@+id/textView_curentdetails" />
@@ -84,6 +92,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="16dp"
             android:text="pressure"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="@+id/textView_humidity"
             app:layout_constraintStart_toStartOf="@+id/textView_humidity"
             app:layout_constraintTop_toBottomOf="@+id/textView_humidity" />
@@ -94,6 +103,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="16dp"
             android:text="UV Index"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="@+id/textView_pressure"
             app:layout_constraintStart_toStartOf="@+id/textView_pressure"
             app:layout_constraintTop_toBottomOf="@+id/textView_pressure" />
@@ -104,6 +114,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="16dp"
             android:text="Wind"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="@+id/textView_uv_index"
             app:layout_constraintStart_toStartOf="@+id/textView_uv_index"
             app:layout_constraintTop_toBottomOf="@+id/textView_uv_index" />
@@ -113,30 +124,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
-            android:layout_marginTop="56dp"
-            android:text=""
+            android:layout_marginTop="62dp"
+            android:text="ssss"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/textView_humidity"
             app:layout_constraintTop_toBottomOf="@+id/imageViewBG" />
-
-        <TextView
-            android:id="@+id/textView_valuepressure"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="128dp"
-            android:layout_marginTop="16dp"
-            android:text=""
-            app:layout_constraintStart_toEndOf="@+id/textView_pressure"
-            app:layout_constraintTop_toBottomOf="@+id/textView_valuehumidity" />
-
-        <TextView
-            android:id="@+id/textView_valueuv_index"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="128dp"
-            android:layout_marginTop="16dp"
-            android:text=""
-            app:layout_constraintStart_toEndOf="@+id/textView_uv_index"
-            app:layout_constraintTop_toBottomOf="@+id/textView_valuepressure" />
 
         <TextView
             android:id="@+id/textView_valuewind"
@@ -144,9 +136,33 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
             android:layout_marginTop="16dp"
-            android:text=""
+            android:text="ssss"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/textView_wind"
             app:layout_constraintTop_toBottomOf="@+id/textView_valueuv_index" />
+
+        <TextView
+            android:id="@+id/textView_valueuv_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="16dp"
+            android:text="ssss"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/textView_uv_index"
+            app:layout_constraintTop_toBottomOf="@+id/textView_valuepressure" />
+
+        <TextView
+            android:id="@+id/textView_valuepressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="16dp"
+            android:text="sss"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/textView_pressure"
+            app:layout_constraintTop_toBottomOf="@+id/textView_valuehumidity" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
